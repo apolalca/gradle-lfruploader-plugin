@@ -1,3 +1,5 @@
 rootProject.name = 'gradle-lfruploader-plugin'
 include ':plugin:lfruploader'
+include 'sample:sample-uploader'
+findProject(':sample:sample-uploader')?.name = 'sample-uploader'
 
