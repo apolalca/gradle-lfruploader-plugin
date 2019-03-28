@@ -83,4 +83,6 @@ local.properties
 .scala_dependencies
 .worksheet
 
-
+.project
+/.gradle/
+build/*
