@@ -4,20 +4,26 @@ import org.gradle.api.logging.Logger;
 
 import com.everis.uploader.ConnectionType;
 import com.everis.uploader.UploaderConfiguration;
+import org.gradle.internal.impldep.com.google.common.annotations.VisibleForTesting;
 
 import java.io.File;
 
 public abstract class Manager {
+    @VisibleForTesting
     protected UploaderConfiguration uploaderConfiguration;
     protected Logger log;
 
     public static Manager instance(UploaderConfiguration uploaderConfiguration, Logger log) {
-        Manager manager;
+        Manager manager = null;
+        ConnectionType connection = uploaderConfiguration.getConnection();
+        String fullPathOfTheClass = "com.everis.uploader.lib." + connection + "Manager";
 
-        if (uploaderConfiguration.getConnection().equals(ConnectionType.SFTP)) {
-            manager = new SSHManager(uploaderConfiguration, log);
-        } else {
-            manager = new FTPManager(uploaderConfiguration, log);
+        try {
+            Class<?> cls = Class.forName(fullPathOfTheClass);
+            manager = (Manager) cls.getDeclaredConstructor(UploaderConfiguration.class, Logger.class)
+                    .newInstance(uploaderConfiguration, log);
+        } catch (ReflectiveOperationException ex) {
+            ex.printStackTrace();
         }
 
         return manager;

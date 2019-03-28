@@ -8,6 +8,20 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    mavenLocal()
+}
+
+apply plugin: 'Uploader'
+
+uploader {
+    uploaderConfiguration {
+        connection = "SFTP"
+        host = "10.125.100.76"
+        user = "root"
+        pass = "Liferay01"
+        port = "22"
+        into = "/temp/metro/"
+    }
 }
 
 dependencies {

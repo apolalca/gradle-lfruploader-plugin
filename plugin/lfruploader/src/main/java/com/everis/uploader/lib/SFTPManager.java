@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class SSHManager extends Manager {
+public class SFTPManager extends Manager {
     private Session session;
     private Channel channel;
     private static final String SFTP = "sftp";
     private static final String EXEC = "exec";
 
 
-    public SSHManager(UploaderConfiguration uploaderConfiguration, Logger log) {
+    public SFTPManager(UploaderConfiguration uploaderConfiguration, Logger log) {
         super(uploaderConfiguration, log);
     }
 

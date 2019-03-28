@@ -6,10 +6,8 @@ import org.gradle.api.logging.Logger;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.api.tasks.TaskExecutionException;
 
-import com.everis.uploader.lib.FTPManager;
 import com.everis.uploader.lib.Manager;
 import com.everis.uploader.lib.ManagerException;
-import com.everis.uploader.lib.SSHManager;
 
 import java.io.File;
 
