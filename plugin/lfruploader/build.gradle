@@ -3,21 +3,23 @@ plugins {
 }
 
 group = 'com.everis.apolalca'
-version = '0.1'
+version = '1.0'
 
+apply plugin: 'groovy'
 apply plugin: 'maven'
 
 gradlePlugin {
     plugins {
         UploaderPlugins {
             id = 'lfruploader'
-            implementationClass = 'com.everis.apolalca.lfruploader'
+            implementationClass = 'com.everis.uploader.UploaderPlugin'
         }
     }
 }
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {

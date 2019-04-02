@@ -1,8 +1,8 @@
 package com.everis.uploader.lib;
 
+import com.everis.uploader.ConnectionType;
 import org.gradle.api.logging.Logger;
 
-import com.everis.uploader.ConnectionType;
 import com.everis.uploader.UploaderConfiguration;
 import org.gradle.internal.impldep.com.google.common.annotations.VisibleForTesting;
 

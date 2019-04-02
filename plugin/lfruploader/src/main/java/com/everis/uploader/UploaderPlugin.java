@@ -7,7 +7,7 @@ public class UploaderPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project target) {
-        target.getTasks().create("uploader", UploaderTask.class, (task) -> {
+        target.getTasks().create("lfruploader", UploaderTask.class, (task) -> {
             task.setLogger(target.getProject().getLogger());
             task.setFileBuild(target.getBuildDir());
         });

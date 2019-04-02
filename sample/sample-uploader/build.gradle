@@ -1,3 +1,14 @@
+buildscript{
+    repositories {
+        mavenLocal()
+
+        dependencies{
+            classpath 'com.everis.apolalca:lfruploader:1.0'
+        }
+    }
+}
+
+
 plugins {
     id 'java'
 }
@@ -11,16 +22,17 @@ repositories {
     mavenLocal()
 }
 
-apply plugin: 'Uploader'
 
-uploader {
+apply plugin: 'lfruploader'
+
+lfruploader {
     uploaderConfiguration {
         connection = "SFTP"
-        host = "10.125.100.76"
+        host = "xx.xx.xx.xx"
         user = "root"
-        pass = "Liferay01"
+        pass = "root"
         port = "22"
-        into = "/temp/metro/"
+        into = "/temp/project/"
     }
 }
 
