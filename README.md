@@ -3,7 +3,7 @@
 lfruploader es un plugin de Gradle preparado para subir de forma sencilla modulos a servidores.
 En ocasiones los entornos de desarrollo estan ubicados en servidores y su utilización es de pocas personas, por
 lo que no es consistente usar [Jenkins](https://www.osgi.org), lfruploader establece una conexión
-por tres tipos de canales SSH, FTP y SFTP, incluso esta preparado para realizar subidas a entornos de AWS
+por tres tipos de canales SFTP(SSH), FTP y FTPS, incluso esta preparado para realizar subidas a entornos de AWS
 incluyendo KeyStore. Gracias a este plugin podremos realizar subiads tanto de todos los componentes como de uno en uno
 gracias a Gradle.
 
@@ -35,7 +35,21 @@ Uso del plugin en Gradle:
 ````
 lfruploader realiza una compilación antes de realizar la subida, en caso de no querer realizar la compilación ver en 'Configuración'.
 ## Configuraciones
+Configuración basica:
+```
 
+lfruploader {
+    uploaderConfiguration {
+        connection = "SFTP"
+        host = "xx.xx.xx.xx"
+        user = "root"
+        pass = "root"
+        port = "22"
+        into = "/temp/project/"
+    }
+}
+
+```
 
 
 Gracias a 'liferay' podremos especificar al modulo su versión, con esta configuración activa el modulo
