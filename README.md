@@ -35,7 +35,9 @@ Uso del plugin en Gradle:
 ````
 lfruploader realiza una compilación antes de realizar la subida, en caso de no querer realizar la compilación ver en 'Configuración'.
 ## Configuraciones
-Configuración basica:
+Existen diferentes posibilidades dentro de la configuración del plugin.
+
+#### Configuración basica por SSH:
 ```
 
 lfruploader {
@@ -51,10 +53,37 @@ lfruploader {
 
 ```
 
+#### Configuración basica para AWS:
+```
+lfruploader {
+    uploaderConfiguration {
+        connection = "SFTP"
+        host = "xx.xx.xx.xx" / "DNS"
+        port = "22"
+        keyPath = "/path/to/KeyPair.pem"
+        into = "/home/ec2-user/"
+        user = "ec2-user"
+    }
+}
+```
+Debemos tener cuidado, ya que es necesario el user correcto `Auth fail` y permisos dentro de esta carpeta `Permission denied`.
+
+
+##### Todas las configuraciones:
+* connection: SFTP(SSH), FTP, FTPS. (String)
+* host: ip o DNS de host. (String)
+* user: usuario. (String)
+* pass: contraseña. (String)
+* port: puerto de conexión. (String)
+* into: carpeta donde se guardarán los modulos. (String)
+* deployPath: Path donde se ubica el directorio deploy. (String)
+* tomcatPath: Path donde se ubica el servidor tomcat. (String)
+* liferay: version del bundle Liferay, ej: 6.2 ó 7.0. (String)
+* keyPath: Path de la ubicación donde se encuentra el keyPath para realizar conexiones a través de AWS. (String)
 
 Gracias a 'liferay' podremos especificar al modulo su versión, con esta configuración activa el modulo
-comprueba que en caso de ser una versión inferior a 7 (no existe [OSGI](https://jenkins.io)) se implantarán los siguientes modulos en las
-siguientes ubicaciones:
+comprueba que en caso de ser una versión inferior a 7 (no existe [OSGI](https://jenkins.io)) se implantarán los siguientes modulos en las siguientes ubicaciones:
 * jar: Se implantará dentro de tomcat/lib/ext
 * war: Se impatará dentro de deploy
 Las configuraciones de tomcat se especifican desde el parametro 'tomcatPath' anteriormente especificado.
+
