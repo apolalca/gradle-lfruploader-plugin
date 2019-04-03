@@ -34,6 +34,12 @@ Uso del plugin en Gradle:
  ./gradlew lfruploader
 ````
 lfruploader realiza una compilación antes de realizar la subida, en caso de no querer realizar la compilación ver en 'Configuración'.
+
+Ejecutar ejemplo:
+```
+./gradlew :sample:sample-uploader:lfruploader
+```
+
 ## Configuraciones
 Existen diferentes posibilidades dentro de la configuración del plugin.
 
