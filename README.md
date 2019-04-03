@@ -8,7 +8,7 @@ incluyendo KeyStore. Gracias a este plugin podremos realizar subiads tanto de to
 gracias a Gradle.
 
 ## Descarga
-Puedes descargarlo desde: ${link}
+Puedes descargarlo desde: [RELEASE 0.1](https://github.com/apolalca/gradle-lfruploader-plugin/releases/tag/0.1)
 
 ## Instalación
 Para utilizar el plugin dentro de Gradle solo tendremos que realizar los siguientes cambios dentro del build.gradle:
