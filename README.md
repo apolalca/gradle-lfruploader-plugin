@@ -8,7 +8,7 @@ incluyendo KeyStore. Gracias a este plugin podremos realizar subiads tanto de to
 gracias a Gradle.
 
 ## Descarga
-Puedes descargarlo desde: ${link}
+Puedes descargarlo desde: [RELEASE 0.1](https://github.com/apolalca/gradle-lfruploader-plugin/releases/tag/0.1)
 
 ## Instalación
 Para utilizar el plugin dentro de Gradle solo tendremos que realizar los siguientes cambios dentro del build.gradle:
@@ -34,6 +34,12 @@ Uso del plugin en Gradle:
  ./gradlew lfruploader
 ````
 lfruploader realiza una compilación antes de realizar la subida, en caso de no querer realizar la compilación ver en 'Configuración'.
+
+Ejecutar ejemplo:
+```
+./gradlew :sample:sample-uploader:lfruploader
+```
+
 ## Configuraciones
 Existen diferentes posibilidades dentro de la configuración del plugin.
 
@@ -87,3 +93,7 @@ comprueba que en caso de ser una versión inferior a 7 (no existe [OSGI](https:/
 * war: Se impatará dentro de deploy
 Las configuraciones de tomcat se especifican desde el parametro 'tomcatPath' anteriormente especificado.
 
+<<<<<<< HEAD
+=======
+see more (wiki)[https://github.com/apolalca/gradle-lfruploader-plugin/wiki]
+>>>>>>> c15b64419ce9207f8886df81fb8bb785b1855bdb
