@@ -7,21 +7,29 @@ por tres tipos de canales SFTP(SSH), FTP y FTPS, incluso esta preparado para rea
 incluyendo KeyStore. Gracias a este plugin podremos realizar subiads tanto de todos los componentes como de uno en uno
 gracias a Gradle.
 
-## Descarga
-Puedes descargarlo desde: [RELEASE 0.1](https://github.com/apolalca/gradle-lfruploader-plugin/releases/tag/0.1)
+_Nota: Actualmente **LFRUPLOADER** esta en versión de desarrollo por lo que solo esta disponible desde **SNAPSHOT**_. 
 
+## Descarga
+Puedes descargarlo desde: Maven SNAPSHOT (1.0-SNAPSHOT)
+```
+maven {
+    url 'https://oss.sonatype.org/content/repositories/snapshots'
+}
+```
 ## Instalación
 Para utilizar el plugin dentro de Gradle solo tendremos que realizar los siguientes cambios dentro del build.gradle:
 
 
 ```
-buildscript{
+buildscript {
     repositories {
-        mavenLocal()
-
-        dependencies{
-            classpath 'com.everis.apolalca:lfruploader:1.0'
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.github.apolalca', name: 'lfruploader', version: '1.0-SNAPSHOT'
     }
 }
 
@@ -93,7 +101,4 @@ comprueba que en caso de ser una versión inferior a 7 (no existe [OSGI](https:/
 * war: Se impatará dentro de deploy
 Las configuraciones de tomcat se especifican desde el parametro 'tomcatPath' anteriormente especificado.
 
-<<<<<<< HEAD
-=======
 see more (wiki)[https://github.com/apolalca/gradle-lfruploader-plugin/wiki]
->>>>>>> c15b64419ce9207f8886df81fb8bb785b1855bdb
