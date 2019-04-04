@@ -1,18 +1,17 @@
-package com.everis.uploader.lib;
+package com.github.apolalca.uploader.lib;
 
+import com.github.apolalca.uploader.UploaderConfiguration;
 import org.apache.commons.net.PrintCommandListener;
 import org.apache.commons.net.ftp.FTPReply;
 import org.apache.commons.net.ftp.FTPSClient;
 import org.gradle.api.logging.Logger;
 
-import com.everis.uploader.UploaderConfiguration;
-
 import java.io.*;
 
-public class FTPManager extends Manager {
+public class FTPSManager extends Manager{
     private FTPSClient client;
 
-    public FTPManager(UploaderConfiguration uploaderConfiguration, Logger log) {
+    public FTPSManager(UploaderConfiguration uploaderConfiguration, Logger log) {
         super(uploaderConfiguration, log);
     }
 
@@ -63,7 +62,7 @@ public class FTPManager extends Manager {
             inputStream.close();
             outputStream.close();
 
-             return client.completePendingCommand();
+            return client.completePendingCommand();
 
         } catch (IOException ex) {
             throw new ManagerException(ex);

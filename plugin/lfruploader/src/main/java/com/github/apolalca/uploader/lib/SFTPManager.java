@@ -1,6 +1,6 @@
-package com.everis.uploader.lib;
+package com.github.apolalca.uploader.lib;
 
-import com.everis.uploader.UploaderConfiguration;
+import com.github.apolalca.uploader.UploaderConfiguration;
 import com.jcraft.jsch.*;
 import org.gradle.api.logging.Logger;
 

@@ -1,9 +1,10 @@
 plugins {
     id 'java-gradle-plugin'
+    id 'maven-publish'
 }
 
-group = 'com.everis.apolalca'
-version = '1.0'
+group = 'com.github.apolalca'
+version = '1.0-SNAPSHOT'
 
 apply plugin: 'groovy'
 apply plugin: 'maven'
@@ -12,7 +13,22 @@ gradlePlugin {
     plugins {
         UploaderPlugins {
             id = 'lfruploader'
-            implementationClass = 'com.everis.uploader.UploaderPlugin'
+            implementationClass = 'com.github.apolalca.uploader.UploaderPlugin'
+        }
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(
+                    url: "${nexusUrl}") {
+                authentication(userName: nexusUsername, password: nexusPassword)
+            }
+            snapshotRepository(
+                    url: "${nexusUrl}") {
+                authentication(userName: nexusUsername, password: nexusPassword)
+            }
         }
     }
 }
@@ -22,8 +38,9 @@ repositories {
     mavenLocal()
 }
 
+
 dependencies {
-    compile 'commons-net:commons-net:3.6'
+    compile group: 'commons-net', name: 'commons-net', version: '3.6'
     compile group: 'com.jcraft', name: 'jsch', version: '0.1.54'
     testImplementation 'junit:junit:4.12'
 }

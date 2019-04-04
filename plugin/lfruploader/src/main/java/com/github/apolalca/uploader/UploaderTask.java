@@ -1,13 +1,12 @@
-package com.everis.uploader;
+package com.github.apolalca.uploader;
 
+import com.github.apolalca.uploader.lib.Manager;
+import com.github.apolalca.uploader.lib.ManagerException;
 import org.gradle.api.Action;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.api.tasks.TaskExecutionException;
-
-import com.everis.uploader.lib.Manager;
-import com.everis.uploader.lib.ManagerException;
 
 import java.io.File;
 

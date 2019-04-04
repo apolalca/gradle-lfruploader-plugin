@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.github.apolalca', name: 'lfruploader', version: '1.0-SNAPSHOT'
+    }
+}
+
+repositories {
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'lfruploader'
+group = 'com.github.apolalca.example'
+version = '0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+lfruploader {
+    uploaderConfiguration {
+        connection = "SFTP"
+        host = "xx.xx.xx.xx"
+        user = "root"
+        pass = "root"
+        port = "22"
+        into = "/temp/project/"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

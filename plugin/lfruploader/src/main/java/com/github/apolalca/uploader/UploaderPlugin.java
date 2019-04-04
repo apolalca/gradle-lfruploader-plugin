@@ -1,4 +1,4 @@
-package com.everis.uploader;
+package com.github.apolalca.uploader;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;

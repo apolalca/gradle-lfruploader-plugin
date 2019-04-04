@@ -1,9 +1,9 @@
-package com.everis.uploader.lib;
+package com.github.apolalca.uploader.lib;
 
-import com.everis.uploader.ConnectionType;
+import com.github.apolalca.uploader.ConnectionType;
 import org.gradle.api.logging.Logger;
 
-import com.everis.uploader.UploaderConfiguration;
+import com.github.apolalca.uploader.UploaderConfiguration;
 import org.gradle.internal.impldep.com.google.common.annotations.VisibleForTesting;
 
 import java.io.File;
@@ -16,7 +16,7 @@ public abstract class Manager {
     public static Manager instance(UploaderConfiguration uploaderConfiguration, Logger log) {
         Manager manager = null;
         ConnectionType connection = uploaderConfiguration.getConnection();
-        String fullPathOfTheClass = "com.everis.uploader.lib." + connection + "Manager";
+        String fullPathOfTheClass = "com.github.apolalca.uploader.lib." + connection + "Manager";
 
         try {
             Class<?> cls = Class.forName(fullPathOfTheClass);

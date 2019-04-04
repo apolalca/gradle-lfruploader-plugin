@@ -1,4 +1,4 @@
-package com.everis.uploader.lib;
+package com.github.apolalca.uploader.lib;
 
 public class ManagerException extends Exception {
 

@@ -1,4 +1,4 @@
-package com.everis.uploader;
+package com.github.apolalca.uploader;
 
 public class UploaderConfiguration {
     private ConnectionType connection;

@@ -1,7 +1,6 @@
-package com.everis.uploader;
+package com.github.apolalca.uploader;
 
-import com.everis.uploader.lib.Manager;
-import com.everis.uploader.lib.SFTPManager;
+import com.github.apolalca.uploader.lib.Manager;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +20,7 @@ public class ManagerTest {
         UploaderConfiguration uploaderConfiguration = new UploaderConfiguration();
         uploaderConfiguration.setConnection(connectionType);
         Manager manager = Manager.instance(uploaderConfiguration, null);
-        Class instacer = Class.forName("com.everis.uploader.lib." + connectionType.toString() + "Manager");
+        Class instacer = Class.forName("com.github.apolalca.uploader.lib." + connectionType.toString() + "Manager");
 
         Assert.assertTrue("Manager is not instanceof " + connectionType, manager.getClass().isAssignableFrom(instacer));
     }
