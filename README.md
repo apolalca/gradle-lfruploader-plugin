@@ -93,7 +93,4 @@ comprueba que en caso de ser una versión inferior a 7 (no existe [OSGI](https:/
 * war: Se impatará dentro de deploy
 Las configuraciones de tomcat se especifican desde el parametro 'tomcatPath' anteriormente especificado.
 
-<<<<<<< HEAD
-=======
 see more (wiki)[https://github.com/apolalca/gradle-lfruploader-plugin/wiki]
->>>>>>> c15b64419ce9207f8886df81fb8bb785b1855bdb
