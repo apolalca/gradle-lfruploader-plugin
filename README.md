@@ -2,10 +2,10 @@
 ![Gradle](https://plugins.gradle.org/shared-assets/shared/images/gradle-logo-horizontal.svg)
 lfruploader es un plugin de Gradle preparado para subir de forma sencilla modulos a servidores.
 En ocasiones los entornos de desarrollo estan ubicados en servidores y su utilización es de pocas personas, por
-lo que no es consistente usar [Jenkins](https://www.osgi.org), lfruploader establece una conexión
+lo que no es consistente usar [Jenkins](https://www.osgi.org) o incluso a veces nuestro entorno 'locl' no existe en nuestro PC estando en una maquina virtual o incluso en otro servidor, lfruploader establece una conexión
 por tres tipos de canales SFTP(SSH), FTP y FTPS, incluso esta preparado para realizar subidas a entornos de AWS
 incluyendo KeyStore. Gracias a este plugin podremos realizar subiads tanto de todos los componentes como de uno en uno
-gracias a Gradle.
+gracias a Gradle _sin la necesidad de usar Compilación > Filezilla > Deploy_.
 
 _Nota: Actualmente **LFRUPLOADER** esta en versión de desarrollo por lo que solo esta disponible desde **SNAPSHOT**_. 
 
